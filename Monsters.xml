@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+<Monster>
+	<Name></Name>
+	<Hp></Hp>
+	<Attack></Attack>
+	<Speed></Speed>
+	<Cost></Cost>
+</Monster>
+-->
+<Monsters>
+	<Monster>
+		<Name>スライム</Name>
+		<Hp>60</Hp>
+		<Attack>10</Attack>
+		<Speed>15</Speed>
+		<Cost>7</Cost>
+	</Monster>
+	<Monster>
+		<Name>スケルトン</Name>
+		<Hp>140</Hp>
+		<Attack>25</Attack>
+		<Speed>35</Speed>
+		<Cost>15</Cost>
+	</Monster>
+	<Monster>
+		<Name>ヒクイドリ</Name>
+		<Hp>120</Hp>
+		<Attack>35</Attack>
+		<Speed>60</Speed>
+		<Cost>18</Cost>
+	</Monster>
+	<Monster>
+		<Name>アーケロン</Name>
+		<Hp>200</Hp>
+		<Attack>20</Attack>
+		<Speed>15</Speed>
+		<Cost>15</Cost>
+	</Monster>
+	<Monster>
+		<Name>ダイアウルフ</Name>
+		<Hp>100</Hp>
+		<Attack>30</Attack>
+		<Speed>50</Speed>
+		<Cost>13</Cost>
+	</Monster>
+	<Monster>
+		<Name>ブリム</Name>
+		<Hp>75</Hp>
+		<Attack>50</Attack>
+		<Speed>15</Speed>
+		<Cost>20</Cost>
+	</Monster>
+	<Monster>
+		<Name>ヨルムンガンド</Name>
+		<Hp>800000</Hp>
+		<Attack>4580</Attack>
+		<Speed>3500</Speed>
+		<Cost>999</Cost>
+	</Monster>
+</Monsters>
