@@ -6,6 +6,7 @@
 	<Attack></Attack>
 	<Speed></Speed>
 	<Cost></Cost>
+	<Hate></Hate>
 </Monster>
 -->
 <Monsters>
@@ -13,8 +14,17 @@
 		<Name>スライム</Name>
 		<Hp>60</Hp>
 		<Attack>10</Attack>
-		<Speed>15</Speed>
-		<Cost>7</Cost>
+		<Speed>20</Speed>
+		<Cost>5</Cost>
+		<Hate>10</Hate>
+	</Monster>
+	<Monster>
+		<Name>ゴブリン</Name>
+		<Hp>80</Hp>
+		<Attack>20</Attack>
+		<Speed>35</Speed>
+		<Cost>9</Cost>
+		<Hate>30</Hate>
 	</Monster>
 	<Monster>
 		<Name>スケルトン</Name>
@@ -22,6 +32,7 @@
 		<Attack>25</Attack>
 		<Speed>35</Speed>
 		<Cost>15</Cost>
+		<Hate>35</Hate>
 	</Monster>
 	<Monster>
 		<Name>ヒクイドリ</Name>
@@ -29,13 +40,15 @@
 		<Attack>35</Attack>
 		<Speed>60</Speed>
 		<Cost>18</Cost>
+		<Hate>35</Hate>
 	</Monster>
 	<Monster>
 		<Name>アーケロン</Name>
 		<Hp>200</Hp>
 		<Attack>20</Attack>
 		<Speed>15</Speed>
-		<Cost>15</Cost>
+		<Cost>20</Cost>
+		<Hate>45</Hate>
 	</Monster>
 	<Monster>
 		<Name>ダイアウルフ</Name>
@@ -43,13 +56,31 @@
 		<Attack>30</Attack>
 		<Speed>50</Speed>
 		<Cost>13</Cost>
+		<Hate>30</Hate>
 	</Monster>
 	<Monster>
-		<Name>ブリム</Name>
+		<Name>プリム</Name>
 		<Hp>75</Hp>
-		<Attack>50</Attack>
-		<Speed>15</Speed>
-		<Cost>20</Cost>
+		<Attack>45</Attack>
+		<Speed>5</Speed>
+		<Cost>18</Cost>
+		<Hate>35</Hate>
+	</Monster>
+	<Monster>
+		<Name>エント</Name>
+		<Hp>180</Hp>
+		<Attack>30</Attack>
+		<Speed>10</Speed>
+		<Cost>23</Cost>
+		<Hate>50</Hate>
+	</Monster>
+	<Monster>
+		<Name>アークドラゴン</Name>
+		<Hp>255</Hp>
+		<Attack>40</Attack>
+		<Speed>30</Speed>
+		<Cost>50</Cost>
+		<Hate>80</Hate>
 	</Monster>
 	<Monster>
 		<Name>ヨルムンガンド</Name>
@@ -57,5 +88,6 @@
 		<Attack>4580</Attack>
 		<Speed>3500</Speed>
 		<Cost>999</Cost>
+		<Hate>999</Hate>
 	</Monster>
 </Monsters>

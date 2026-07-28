@@ -11,6 +11,7 @@ namespace BetAutoBattle
         public int Attack { get; set; }
         public int Speed { get; set; }
         public int Cost { get; set; }
+        public int Hate { get; set; }
         public int BlockRate { get; set; }
         public int DodgeRate { get; set; }
     }
@@ -37,13 +38,16 @@ namespace BetAutoBattle
 
         public int cost { get; set; }
 
-        public Monster(string name, int hp, int attack, int speed,int cost)
+        public int hate { get; set; }
+
+        public Monster(string name, int hp, int attack, int speed,int cost, int hate)
         {
             this.name = name;
             this.hp = hp;
             this.attack = attack;
             this.speed = speed;
             this.cost = cost;
+            this.hate = hate;
         }
     }
 
@@ -57,8 +61,8 @@ namespace BetAutoBattle
             {
                 MonsterList monsterList = (MonsterList)xmlSerializer.Deserialize(stream);
 
-                List<Monster> teamA = Battle.BuildTeam(monsterList.Monsters, 30, 4);
-                List<Monster> teamB = Battle.BuildTeam(monsterList.Monsters, 40, 3);
+                List<Monster> teamA = Battle.BuildTeam(monsterList.Monsters, 45, 3);
+                List<Monster> teamB = Battle.BuildTeam(monsterList.Monsters, 60, 2);
 
                 Console.WriteLine("チームA:");
                 foreach (var m in teamA)
@@ -71,6 +75,36 @@ namespace BetAutoBattle
                 {
                     Console.WriteLine($"{m.name} (Cost:{m.cost})");
                 }
+
+                List<Monster> allMonsters = new List<Monster>();
+                allMonsters.AddRange(teamA);
+                allMonsters.AddRange(teamB);
+                allMonsters.Sort((a, b) => b.speed.CompareTo(a.speed));
+
+                bool teamAAlive = true;
+                bool teamBAlive = true;
+
+                while (teamAAlive && teamBAlive)
+                {
+                    foreach (var attacker in allMonsters)
+                    {
+                        if (attacker.hp <= 0) continue;
+
+                        List<Monster> enemyTeam = teamA.Contains(attacker) ? teamB : teamA;
+                        Monster target = Battle.ChooseTarget(enemyTeam);
+
+                        if (target == null) break; // 相手全滅
+
+                        string attackerTeamName = teamA.Contains(attacker) ? "A" : "B";
+                        string targetTeamName = teamA.Contains(target) ? "A" : "B";
+                        Battle.Attack(attacker, target, attackerTeamName, targetTeamName);
+                    }
+
+                    teamAAlive = teamA.Exists(m => m.hp > 0);
+                    teamBAlive = teamB.Exists(m => m.hp > 0);
+                }
+
+                Console.WriteLine(teamAAlive ? "チームAの勝利！" : "チームBの勝利！");
             }
         }
     }
